@@ -1,0 +1,70 @@
+$base-color: rgb(88, 88, 88); // Default
+//$base-color: rgb(252, 192, 26); // Yellow
+
+$textMutedColor: rgb(184, 184, 184);
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+body,
+button {
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --offcanvas-width: 270px;
+  /* --offcanvas-min-width-lg: 80px; */
+  --topNavbarHeight: 56px;
+  --topDashboardHeight: 100px;
+
+}
+.sidebar-nav {
+  width: var(--offcanvas-width);
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+
+#sidebar-navbar{
+  width: 100%;
+}
+
+#brand {
+  margin-bottom: 20px;
+}
+
+#offcanvas {
+  background-color: darken($base-color, 10% );
+  .text-muted {
+    color: $textMutedColor !important;
+  }
+}
+
+#navbar-id {
+  background-color: lighten($base-color, 10% );
+}
+
+
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  } 
+  main {
+    margin-left: var(--offcanvas-width);
+    top: var(--topDashboardHeight);
+  }
+
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    
+  }
+}

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+body,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --offcanvas-width: 270px;
+  /* --offcanvas-min-width-lg: 80px; */
+  --topNavbarHeight: 56px;
+  --topDashboardHeight: 100px;
+}
+
+.sidebar-nav {
+  width: var(--offcanvas-width);
+}
+
+.sidebar-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar-link .right-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#sidebar-navbar {
+  width: 100%;
+}
+
+#brand {
+  margin-bottom: 20px;
+}
+
+#offcanvas {
+  background-color: #3f3f3f;
+}
+
+#offcanvas .text-muted {
+  color: #b8b8b8 !important;
+}
+
+#navbar-id {
+  background-color: #727272;
+}
+
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+    top: var(--topDashboardHeight);
+  }
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+  }
+}
+/*# sourceMappingURL=dashbird.css.map */
